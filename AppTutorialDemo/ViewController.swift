@@ -6,52 +6,50 @@
 //
 
 import UIKit
+import Gecco
 
 class ViewController: UIViewController {
+    
+    var mainView: MainView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
-        let leftButton = Button(frame: view.frame, title: "左")
-        let centerButton = Button(frame: view.frame, title: "真ん中")
-        let rightButton = Button(frame: view.frame, title: "右")
-        let tutorialButton = Button(frame: view.frame, title: "使い方")
-        
-        let buttons = UIStackView(arrangedSubviews: [leftButton, centerButton, rightButton])
-        buttons.axis = .horizontal
-        buttons.alignment = .fill
-        buttons.distribution = .fillEqually
-        buttons.spacing = 30
-        buttons.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(buttons)
-        view.addSubview(tutorialButton)
+        mainView = MainView()
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(mainView)
         
         [
-            buttons.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            buttons.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            tutorialButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            tutorialButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50)
+            mainView.topAnchor.constraint(equalTo: view.topAnchor),
+            mainView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mainView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ].forEach { $0.isActive = true }
-    }
-
-}
-
-class Button: UIButton {
-    
-    init(frame: CGRect, title: String) {
-        super.init(frame: frame)
         
-        backgroundColor = .blue
-        setTitle(title, for: .normal)
-        titleLabel?.textColor = .white
-        translatesAutoresizingMaskIntoConstraints = false
-        
+        mainView.tutorialButton.addTarget(self, action: #selector(tutorialPressed(_:)), for: .touchUpInside)
+
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @objc func tutorialPressed(_ sender: UIButton) {
+        showSpotlight()
+    }
+    
+    func showSpotlight() {
+        var positions: [CGPoint] = []
+        mainView.subviews.forEach { view in
+            if view is UIStackView {
+                let parentY = view.center.y
+                view.subviews.forEach { subview in
+                    let childX = subview.center.x
+                    let childY = parentY
+                    positions.append(CGPoint(x: childX, y: childY))
+                }
+            } else {
+                positions.append(view.center)
+            }
+        }
+        let spotlightViewController = AnnotationViewController(positions: positions)
+        present(spotlightViewController, animated: true, completion: nil)
     }
     
 }
-
