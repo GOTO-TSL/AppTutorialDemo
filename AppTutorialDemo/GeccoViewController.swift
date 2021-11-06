@@ -8,7 +8,7 @@
 import UIKit
 import Gecco
 
-class ViewController: UIViewController {
+class GeccoViewController: UIViewController {
     
     var mainView: MainView!
     

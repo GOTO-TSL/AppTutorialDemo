@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024975CE2736AB1300ACB3FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024975CD2736AB1300ACB3FA /* ViewController.swift */; };
 		02CAEDAC27325FD600F27A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAEDAB27325FD600F27A55 /* AppDelegate.swift */; };
 		02CAEDAE27325FD600F27A55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAEDAD27325FD600F27A55 /* SceneDelegate.swift */; };
-		02CAEDB027325FD600F27A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAEDAF27325FD600F27A55 /* ViewController.swift */; };
+		02CAEDB027325FD600F27A55 /* GeccoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAEDAF27325FD600F27A55 /* GeccoViewController.swift */; };
 		02CAEDB527325FD800F27A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CAEDB427325FD800F27A55 /* Assets.xcassets */; };
 		02CAEDB827325FD800F27A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CAEDB627325FD800F27A55 /* LaunchScreen.storyboard */; };
 		02CAEDC127326FDB00F27A55 /* AnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAEDC027326FDB00F27A55 /* AnnotationViewController.swift */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		024975CD2736AB1300ACB3FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02CAEDA827325FD600F27A55 /* AppTutorialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTutorialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CAEDAB27325FD600F27A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02CAEDAD27325FD600F27A55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02CAEDAF27325FD600F27A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02CAEDAF27325FD600F27A55 /* GeccoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeccoViewController.swift; sourceTree = "<group>"; };
 		02CAEDB427325FD800F27A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02CAEDB727325FD800F27A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02CAEDB927325FD800F27A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024975CC2736A9A500ACB3FA /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				024975CD2736AB1300ACB3FA /* ViewController.swift */,
+			);
+			path = UIScrollView;
+			sourceTree = "<group>";
+		};
 		02CAED9F27325FD600F27A55 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +75,7 @@
 		02CAEDAA27325FD600F27A55 /* AppTutorialDemo */ = {
 			isa = PBXGroup;
 			children = (
+				024975CC2736A9A500ACB3FA /* UIScrollView */,
 				02CAEDBF273267BA00F27A55 /* Gecco */,
 				02CAEDAB27325FD600F27A55 /* AppDelegate.swift */,
 				02CAEDAD27325FD600F27A55 /* SceneDelegate.swift */,
@@ -79,7 +90,7 @@
 		02CAEDBF273267BA00F27A55 /* Gecco */ = {
 			isa = PBXGroup;
 			children = (
-				02CAEDAF27325FD600F27A55 /* ViewController.swift */,
+				02CAEDAF27325FD600F27A55 /* GeccoViewController.swift */,
 				02CAEDC027326FDB00F27A55 /* AnnotationViewController.swift */,
 			);
 			name = Gecco;
@@ -216,7 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02CAEDB027325FD600F27A55 /* ViewController.swift in Sources */,
+				024975CE2736AB1300ACB3FA /* ViewController.swift in Sources */,
+				02CAEDB027325FD600F27A55 /* GeccoViewController.swift in Sources */,
 				02CAEDAC27325FD600F27A55 /* AppDelegate.swift in Sources */,
 				02CAEDAE27325FD600F27A55 /* SceneDelegate.swift in Sources */,
 				02CAEDC3273276D700F27A55 /* MainView.swift in Sources */,
